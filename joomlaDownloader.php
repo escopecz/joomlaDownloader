@@ -20,9 +20,8 @@ class JoomlaDownloader
 		{
 			if($this->unzipFile())
 			{
-				// $source = $this->dirPath.'/joomla-cms-master';
-				// $destination = $this->filePath;
-				// $this->moveDirContent($source, $destination);
+				$this->clean();
+				$this->redirect();
 			}
 		}
 	}
@@ -71,8 +70,6 @@ class JoomlaDownloader
 			if($extracted)
 			{
 				echo 'Joomla extracted!';
-				//$this->clean();
-				$this->redirect();
 				return true;
 			}
 			else
@@ -98,6 +95,7 @@ class JoomlaDownloader
 	public function redirect()
 	{
 		echo '<script>window.location = "http://'.$_SERVER['HTTP_HOST'].'/installation/index.php";</script>';
+		die('redirect');
 	}
 
 	public function getZipError($errorNumber)
