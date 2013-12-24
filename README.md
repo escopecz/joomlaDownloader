@@ -1,4 +1,4 @@
-joomlaDownloader
+Joomla Downloader
 ================
 
 Script downloads Joomla .zip package from official source and unzip it to the same directory as the script is.
